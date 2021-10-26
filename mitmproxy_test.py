@@ -16,7 +16,7 @@ def response(flow) -> dict:
     url = "http://www.gsosc.cn/prod-api/app/dt/"
     exam_url = "http://www.gsosc.cn/prod-api/app/bzCeShi/loadCsTiByDtId"
     # if exam_url in flow.request.url:
-    if exam_url in flow.request.url:
+    if exam_url or url in flow.request.url:
         print(flow.response.text)
         results = json.loads(flow.response.text)
         datas: list = results.get("data")

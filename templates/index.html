@@ -37,11 +37,12 @@
         {% for message in messages %}
             <tr>
                 <th scope="col">标题</th>
-                <td >{{ message.get('title') }}</td>
+                <td><textarea name="mytextarea" rows="2" style="width:100%;text-align: left">{{ message.get('title') }}</textarea></td>
             </tr>
             <tr>
                 <th scope="col">分析:</th>
-                <td>{{ message.get('"analyze"') }}</td>
+                <td>
+                    <textarea name="mytextarea" auto rows="2" style="width:100%;text-align: left">{{ message.get('analyze') }}</textarea></td>
             </tr>
             {% for answer in message.get('options') %}
             <tr>
